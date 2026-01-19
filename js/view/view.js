@@ -1,11 +1,20 @@
-'use strict'
-//hier komen de view functies, hieronder staat voorbeeld code
-const buttons = document.querySelectorAll('.letters button');
+var textElement = document.querySelector("#text");
+var optionsButtonsElement = document.querySelector("#option-buttons");
 
-function bindButtons(){
-    for(let b=0;b<buttons.length;b++)
-    {
-        buttons[b].addEventListener('click', handleLetterClick);
-    }
+function setText(html) {
+  textElement.innerHTML = html;
 }
 
+function clearOptions() {
+  while (optionsButtonsElement.firstChild) {
+    optionsButtonsElement.removeChild(optionsButtonsElement.firstChild);
+  }
+}
+
+function addOptionButton(text, onClick) {
+  var button = document.createElement("button");
+  button.innerText = text;
+  button.classList.add("btn");
+  button.addEventListener("click", onClick);
+  optionsButtonsElement.appendChild(button);
+}

@@ -1,0 +1,100 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+
+  /* stadium background + fallback */
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("../images/background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* your HTML has body > div as the main wrapper */
+body > div {
+  width: 92%;
+  max-width: 900px;
+  padding: 25px 15px;
+}
+
+/* main text panel (red box like the mockups) */
+#text {
+  background: #b3001b;             /* deep red */
+  border: 4px solid #ffffff;
+  padding: 28px 20px;
+  text-align: center;
+
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  font-size: 22px;
+  line-height: 1.4;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+  margin: 18px auto 18px auto;
+}
+
+/* option buttons area */
+.btn-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+}
+
+/* base button style */
+.btn {
+  width: 100%;
+  padding: 18px 16px;
+
+  border: 4px solid #ffffff;
+  background: #b3001b; /* default red like scenario screen */
+  color: #ffffff;
+
+  font-size: 18px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+/* hover/active = simple */
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* “student trick” to mimic the archetype colors from the first mockup screen */
+.btn-grid .btn:nth-child(1) { background: #0b1f33; } /* dark navy */
+.btn-grid .btn:nth-child(2) { background: #2c6a86; } /* blue */
+.btn-grid .btn:nth-child(3) { background: #6fd14a; color: #0a0a0a; } /* green */
+.btn-grid .btn:nth-child(4) { background: #b3001b; } /* red */
+
+/* make it look a bit more like the mockups on bigger screens */
+@media (min-width: 700px) {
+  #text {
+    font-size: 26px;
+    padding: 34px 26px;
+  }
+
+  .btn {
+    font-size: 20px;
+    padding: 20px 18px;
+  }
+}
