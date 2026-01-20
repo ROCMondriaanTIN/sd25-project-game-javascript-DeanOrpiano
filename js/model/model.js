@@ -149,7 +149,7 @@ var textNodes = [
     "4) You win if your stat is higher<br><br>" +
     "<b>Goal:</b> Get 2 successes to make the team.<br><br>" +
     "Click <b>Start</b>.",
-  options: [{ text: "Start", nextText: 1 }]
+  options: [{ text: "Start", nextText: 7 }]
 },
 
 
@@ -203,14 +203,16 @@ var textNodes = [
   {
     id: 2,
     text: function (s) {
-      return (
-        "You picked: <b>" + s.player.archetype + "</b><br>" +
-        "Stats: SHOOT " + s.player.stats.SHOOT +
-        " | HANDLE " + s.player.stats.HANDLE +
-        " | DEFENSE " + s.player.stats.DEFENSE +
-        " | IQ " + s.player.stats.IQ +
-        "<br><br>Coach: \"Tryouts start now. Prove yourself.\""
-      );
+return (
+  "Name: <b>" + s.player.name + "</b><br>" +
+  "You picked: <b>" + s.player.archetype + "</b><br>" +
+  "Stats: SHOOT " + s.player.stats.SHOOT +
+  " | HANDLE " + s.player.stats.HANDLE +
+  " | DEFENSE " + s.player.stats.DEFENSE +
+  " | IQ " + s.player.stats.IQ +
+  "<br><br>Coach: \"Tryouts start now. Prove yourself.\""
+);
+
     },
     options: [
       { text: "Start tryout", nextText: 3 },
@@ -378,6 +380,27 @@ var textNodes = [
       },
     ],
   },
+  {
+  id: 7,
+  text:
+    "<b>ENTER YOUR NAME</b><br><br>" +
+    "<input id='nameInput' type='text' placeholder='Your name...' maxlength='15' style='padding:10px; width:80%; border-radius:8px;'><br><br>",
+  options: [
+    {
+      text: "Continue",
+      nextText: 1,
+      onClick: function () {
+        var inp = document.getElementById("nameInput");
+        var name = inp ? inp.value.trim() : "";
+
+        if (name === "") name = "Rookie";
+
+        setState({ player: { name: name } });
+      }
+    }
+  ]
+},
+
 
   // Clutch results -> end
   { id: 30, text: function () { return resultText(); }, options: [{ text: "See results", nextText: 8 }] },

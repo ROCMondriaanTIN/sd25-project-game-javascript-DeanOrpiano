@@ -37,6 +37,11 @@ function showOption(option) {
 
 
 function selectOption(option) {
+
+  //run extra click code (for name input etc.)
+  if (option.onClick) {
+    option.onClick();
+  }
   // Apply state changes (like choosing archetype)
   if (option.setState) {
     setState(option.setState);
