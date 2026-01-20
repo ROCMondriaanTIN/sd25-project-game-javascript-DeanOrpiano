@@ -1,6 +1,6 @@
 function startGame() {
   reset();
-  showTextNode(1);
+  showTextNode(0);
 }
 
 function showTextNode(textNodeIndex) {

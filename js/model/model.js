@@ -139,6 +139,20 @@ function resultText() {
 
 // ---------------- STORY NODES ----------------
 var textNodes = [
+{
+  id: 0,
+  text:
+    "<b>HOW TO PLAY 🏀</b><br><br>" +
+    "1) Pick an <b>archetype</b><br>" +
+    "2) Choose a play (SHOOT / HANDLE / DEFENSE / IQ)<br>" +
+    "3) (STAT check) = D10 roll (1–10)<br>" +
+    "4) You win if your stat is higher<br><br>" +
+    "<b>Goal:</b> Get 2 successes to make the team.<br><br>" +
+    "Click <b>Start</b>.",
+  options: [{ text: "Start", nextText: 1 }]
+},
+
+
   {
     id: 1,
     text: "WELCOME TO <b>HOOPS LEGACY</b> 🏀<br><br>Choose your archetype:",
