@@ -155,7 +155,9 @@ var textNodes = [
 
   {
     id: 1,
-    text: "WELCOME TO <b>HOOPS LEGACY</b> 🏀<br><br>Choose your archetype:",
+    text:function (s) {
+    return "WELCOME TO HOOPS LEGACY, <b>" + s.player.name + "</b> 🏀<br><br>Choose your archetype:";
+  },
     options: [
       {
         text: "Sharpshooter (shooting focus)",
@@ -204,8 +206,8 @@ var textNodes = [
     id: 2,
     text: function (s) {
 return (
-  "Name: <b>" + s.player.name + "</b><br>" +
-  "You picked: <b>" + s.player.archetype + "</b><br>" +
+  
+   s.player.name + " picked: <b>" + s.player.archetype + "</b><br>" +
   "Stats: SHOOT " + s.player.stats.SHOOT +
   " | HANDLE " + s.player.stats.HANDLE +
   " | DEFENSE " + s.player.stats.DEFENSE +
