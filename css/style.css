@@ -9,7 +9,7 @@ body {
   color: white;
 
   /* stadium background + fallback */
-  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("../images/background.png");
+  background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url("../img/background.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;

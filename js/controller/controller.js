@@ -89,5 +89,4 @@ function selectOption(option) {
   showTextNode(nextTextNodeId);
 }
 
-// Start game when page loads
-startGame();
+

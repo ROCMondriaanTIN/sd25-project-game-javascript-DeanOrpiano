@@ -1,5 +1,3 @@
-// model.js (MODEL) - data + rules + story
-
 // This is the "save file" of the game
 var state = {};
 
@@ -139,7 +137,7 @@ function resultText() {
 
 // ---------------- STORY NODES ----------------
 var textNodes = [
-{
+ {
   id: 0,
   text:
     "<b>HOW TO PLAY 🏀</b><br><br>" +
